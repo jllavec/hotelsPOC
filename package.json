@@ -1,7 +1,7 @@
 {
   "name": "hotelsPOC",
   "version": "0.0.1",
-  "description": "",
+  "description": "Prueba de codigo para the-cocktail",
   "main": "index.js",
   "browserslist": [
     "last 2 versions"
@@ -26,23 +26,27 @@
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
-    "chai": "^4.1.2",
     "commitizen": "^2.10.1",
     "css-loader": "^1.0.0",
     "cz-conventional-changelog": "^2.1.0",
+    "file-loader": "^2.0.0",
+    "flexbox-grid-mixins": "^0.1.4",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "imagemin": "^6.0.0",
+    "img-loader": "^3.0.0",
     "mini-css-extract-plugin": "^0.4.2",
-    "mocha": "^5.2.0",
-    "mocha-webpack": "^1.1.0",
     "node-sass": "^4.9.3",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
+    "url-loader": "^1.1.1",
     "webpack": "^4.17.1",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5"
   },
-  "dependencies": {},
+  "dependencies": {
+    "svg-url-loader": "^2.3.2"
+  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"

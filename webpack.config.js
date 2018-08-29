@@ -1,6 +1,7 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 module.exports = {
   entry: './assets/js/index.js',
   output: {
@@ -28,6 +29,20 @@ module.exports = {
           "postcss-loader",
           "sass-loader"
         ]
+      },
+      {
+        test: /\.(png|jp(e*)g|svg)$/,
+        use: [{
+            loader: 'url-loader',
+            options: {
+                limit: 8000,
+                name: './assets/img/[hash]-[name].[ext]'
+            }
+        },
+        {
+          loader: "img-loader"
+        }
+      ]
       }
     ]
   },
