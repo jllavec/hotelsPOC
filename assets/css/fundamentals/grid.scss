@@ -1,0 +1,42 @@
+@import 'node_modules/flexbox-grid-mixins/sass/flexbox-grid-mixins';
+
+
+$default-grid-gutter: 2%;
+
+@mixin colCreator($cols) {
+	@for $i from 1 through $cols {
+		> .grid__col-#{$i} {
+			@include grid-col($col: $i, $grid-columns: $cols, $gutter: $default-grid-gutter);
+		}
+	}
+}
+
+.grid {
+	@include apply-flex(column, false, false);
+	
+	flex: 20;
+
+	@include tablet-media-query {
+		flex: 12;
+	}
+
+	@include desktop-media-query {
+		flex: 10;
+	}
+
+
+	@include grid($flex-flow: row wrap, $gutter: $default-grid-gutter, $grid-type: margin-offset);
+
+	@include colCreator(2);
+
+	@include tablet-media-query {
+
+		@include colCreator(4);
+	}
+
+	@include desktop-media-query {
+		@include grid($gutter: $default-grid-gutter,  $grid-type: margin-offset);
+
+		@include colCreator(10);
+	}
+}

@@ -1,0 +1,52 @@
+@import '../../fundamentals/grid.scss';
+@import '../screen1/contsChildrenScr1.scss';
+@import '../screen2/contsScr2.scss';
+
+@-webkit-keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+div#container1 {
+  min-height: 250%;
+  display: none;
+  flex-direction: column;
+  margin-top: 80px;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+  @include desktop-media-query {
+      min-height: 90%;
+      margin-top: 0px;
+      &[iefix] {
+        height:100%;
+      }
+  }
+  &.active{
+    @include apply-flex();
+    opacity:1;
+  }
+  &.hidden{
+    opacity:0;
+  }
+}
+
+div#container2 {
+  display: none;
+  flex-direction: column;
+  margin-top: 80px;
+  opacity:0;
+  -webkit-animation: fadeEffect 1s;
+  animation: fadeEffect 1s;
+  &.active{
+    @include apply-flex();
+    opacity:1;
+  }
+  &.hidden{
+    opacity:0;
+  }
+}

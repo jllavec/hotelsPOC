@@ -1,0 +1,78 @@
+div.detail {
+  border: 1px grey solid;
+  margin-bottom: 20px;
+  .detail-header {
+      @include apply-flex(row, center, false);
+      
+      height: 200px;
+      cursor: pointer;
+      > img {
+        flex:1;
+        height:50%;
+        @include desktop-media-query {
+          height:100%;
+        }
+      }
+      .detail-title-container {
+        @include apply-flex(column, false, false);
+        @include desktop-media-query {
+          height: 100%;
+        }
+        
+        flex: 9;
+        padding: 10px 15px;
+        align-self: flex-start;
+    
+        max-height: 100%;
+        .detail-title {
+          flex: 1;
+          @include font(18px, 24px, $dark-blue, 700, 'Roboto Slab');
+        }
+        .detail-description {
+          flex:3;
+          //display: none;
+          overflow: auto;
+          @include font(14px, 20px, grey, 400, 'Roboto');
+        }
+        .show-more{
+          flex: 1;
+          @include font(14px, 19px, $light-blue, 700, 'Roboto');
+          > img {
+            width: 16px;
+            margin-left: 10px;
+            -moz-transition: transform 0.2s;
+              -webkit-transition: transform 0.2s;
+              transition: transform 0.2s;
+          }
+        }
+      }
+  }
+
+  > .collapse-content {
+    @include collapse-style;
+    > div{
+      padding: 20px 30px;
+    }
+    > .content-detail-title {
+      flex:1;
+      @include font(14px, 20px, grey, 400, 'Roboto');
+    }
+    > .detail-features {
+      @include font(14px, 20px, grey, 400, 'Roboto');
+      @include apply-flex(column, false, false);
+      @include desktop-media-query {
+        @include apply-flex(row, false, false);
+      }
+      
+      flex: 1;
+
+      > ul {
+        flex:1;
+      }
+    }
+    > .last-p {
+      flex:1;
+      @include font(14px, 20px, $dark-blue, 700, 'Roboto');
+    }
+  }
+}

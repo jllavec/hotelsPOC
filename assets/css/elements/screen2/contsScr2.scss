@@ -1,0 +1,101 @@
+@import 'mainCollapsibleElement.scss';
+
+div.collapse {
+  width: 100%;
+  background: white;
+  min-height: 100px;
+  margin-bottom: 40px;
+
+  .collapse-header {
+      @include apply-flex(column, center, false);
+
+      height: 100px;
+      cursor: pointer;
+
+      .row-detail{
+        @include apply-flex(row, center, false);
+        @include desktop-media-query{
+          flex:none;
+        }
+
+        width: 100%;
+        flex:9;
+        > img {
+          margin: 0 30px;
+          -moz-transition: transform 0.5s;
+          -webkit-transition: transform 0.5s;
+          transition: transform 0.5s;
+          &.flip {
+            transform: rotate(-180deg);
+          }
+        }
+        > .collapse-title {
+          flex:9;
+          > .optional-feature {
+            @include font(24px, 38px, $light-blue, 700, 'Roboto Slab');
+          }
+          > .opt {
+            @include font(12px, 38px, $dark-blue, 400, 'Roboto Slab');
+          }
+        }
+      }
+
+      .exclusive {
+        flex:1;
+        width:100%;
+        text-align: center;
+        align-self: flex-end;
+        background-color:red;
+        @include font(12px, 14px, white, 400, 'Roboto', true);
+        @include desktop-media-query{
+          width: auto;
+          padding:5px;
+          flex:none;
+        }
+      }
+  }
+  .collapse-content {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+  }
+}
+
+.detail {
+  border: 1px grey solid;
+  margin-bottom: 20px;
+  .detail-header {
+      @include apply-flex(row, center, false);
+      
+      height: 200px;
+      cursor: pointer;
+      > img {
+        flex:1;
+        height:100%;
+        @include desktop-media-query {
+        }
+      }
+  }
+  .detail-title-container {
+    @include apply-flex(column, false, false);
+    
+    flex: 9;
+    padding: 30px;
+    align-self: flex-start;
+
+    .detail-title {
+      flex: 1;
+      @include font(18px, 24px, $dark-blue, 700, 'Roboto Slab');
+    }
+    .detail-description {
+      flex:2;
+      @include font(14px, 20px, grey, 400, 'Roboto');
+    }
+    .show-more{
+      flex: 1;
+      @include font(14px, 19px, $light-blue, 700, 'Roboto');
+    }
+  }
+}
