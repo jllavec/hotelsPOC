@@ -1,10 +1,10 @@
 # hotelsPOC
 
 ## Task runner
-* **Start**   
+* **Start** (npm start).    
 Inicia un live server de webpack con el proyecto
 
-* **Build**   
+* **Build** (npm run build).   
 Genera los ficheros minificados y compilados(scss->css / es6 -> es5)
 
 ## Git
